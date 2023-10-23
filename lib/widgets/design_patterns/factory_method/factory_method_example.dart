@@ -14,6 +14,7 @@ class FactoryMethodExample extends StatefulWidget {
 
 class _FactoryMethodExampleState extends State<FactoryMethodExample> {
   final List<CustomDialog> customDialogList = const [
+    // instantiate for custom dialog types
     AndroidAlertDialog(),
     IosAlertDialog(),
   ];
