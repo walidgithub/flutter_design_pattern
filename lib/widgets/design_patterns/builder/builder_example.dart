@@ -13,7 +13,9 @@ class BuilderExample extends StatefulWidget {
 }
 
 class _BuilderExampleState extends State<BuilderExample> {
+  // inject with first burger type in director class
   final _burgerMaker = BurgerMaker(HamburgerBuilder());
+  // here we will add all types with name in menu
   final List<BurgerMenuItem> _burgerMenuItems = [];
 
   late BurgerMenuItem _selectedBurgerMenuItem;
@@ -41,6 +43,7 @@ class _BuilderExampleState extends State<BuilderExample> {
   }
 
   Burger _prepareSelectedBurger() {
+    // execute all burger functions from selected burger
     _burgerMaker.prepareBurger();
 
     return _burgerMaker.getBurger();
@@ -48,6 +51,7 @@ class _BuilderExampleState extends State<BuilderExample> {
 
   void _onBurgerMenuItemChanged(BurgerMenuItem? selectedItem) => setState(() {
         _selectedBurgerMenuItem = selectedItem!;
+        // inject with another builder or burger type
         _burgerMaker.changeBurgerBuilder(selectedItem.burgerBuilder);
         _selectedBurger = _prepareSelectedBurger();
       });

@@ -3,6 +3,7 @@ import '../ingredients/index.dart';
 
 class CheeseburgerBuilder extends BurgerBuilderBase {
   CheeseburgerBuilder() {
+    // you can call variable in inherited class and set a value to it
     price = 1.09;
   }
 

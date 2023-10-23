@@ -1,6 +1,7 @@
 import '../burger_builder_base.dart';
 import '../ingredients/index.dart';
 
+// here we will override just what we need for this type
 class BigMacBuilder extends BurgerBuilderBase {
   BigMacBuilder() {
     price = 3.99;
