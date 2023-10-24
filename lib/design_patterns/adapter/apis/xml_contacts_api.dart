@@ -22,5 +22,6 @@ class XmlContactsApi {
 
   const XmlContactsApi();
 
+  // to send xml variable to convert it
   String getContactsXml() => _contactsXml;
 }

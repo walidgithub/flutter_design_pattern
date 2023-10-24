@@ -23,5 +23,6 @@ class JsonContactsApi {
 
   const JsonContactsApi();
 
+  // to send json variable to convert it
   String getContactsJson() => _contactsJson;
 }

@@ -5,20 +5,23 @@ import '../contact.dart';
 import '../icontacts_adapter.dart';
 
 class XmlContactsAdapter implements IContactsAdapter {
+  final XmlContactsApi api;
+
   const XmlContactsAdapter({
+    // take an instance from xml class
     this.api = const XmlContactsApi(),
   });
 
-  final XmlContactsApi api;
-
   @override
   List<Contact> getContacts() {
+    // get xml file or variable and convert it
     final contactsXml = api.getContactsXml();
     final contactsList = _parseContactsXml(contactsXml);
 
     return contactsList;
   }
 
+  // converter from xml to dart
   List<Contact> _parseContactsXml(String contactsXml) {
     final xmlDocument = XmlDocument.parse(contactsXml);
     final contactsList = <Contact>[];
