@@ -15,8 +15,10 @@ class BridgeExample extends StatefulWidget {
 }
 
 class _BridgeExampleState extends State<BridgeExample> {
+  // implementation for abstraction
   final _storages = [SqlStorage(), FileStorage()];
 
+  // abstraction
   late IRepository _customersRepository;
   late IRepository _ordersRepository;
 

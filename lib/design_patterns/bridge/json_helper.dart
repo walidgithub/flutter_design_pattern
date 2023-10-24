@@ -7,10 +7,12 @@ import 'entities/order.dart';
 class JsonHelper {
   const JsonHelper._();
 
+  // it will convert from ({id:464, name:'dddd'}) to (like instance of Customer)
   static String serialiseObject(EntityBase entityBase) {
     return jsonEncode(entityBase);
   }
 
+  // it will convert from (like instance of Customer) to ({id:464, name:'dddd'})
   static T deserialiseObject<T extends EntityBase>(String jsonString) {
     final json = jsonDecode(jsonString)! as Map<String, dynamic>;
 
