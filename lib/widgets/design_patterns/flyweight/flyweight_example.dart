@@ -17,10 +17,13 @@ class _FlyweightExampleState extends State<FlyweightExample> {
 
   final shapeFactory = const ShapeFactory();
 
+  // return circle or square one time
   late final ShapeFlyweightFactory _shapeFlyweightFactory;
+  // gte shapes type
   late List<IPositionedShape> _shapesList;
 
   var _shapeInstancesCount = 0;
+  // call with FlyweightFactory mean call one instance from object
   var _useFlyweightFactory = false;
 
   @override
