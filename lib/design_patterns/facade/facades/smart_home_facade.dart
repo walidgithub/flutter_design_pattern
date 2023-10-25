@@ -2,6 +2,7 @@ import '../apis/apis.dart';
 import '../smart_home_state.dart';
 import 'gaming_facade.dart';
 
+// this is facade example which you collect objects in one class and call functions in order
 class SmartHomeFacade {
   const SmartHomeFacade({
     this.gamingFacade = const GamingFacade(),
