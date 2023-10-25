@@ -26,8 +26,11 @@ class PizzaMenu {
 
   Pizza _getMargherita() {
     Pizza pizza = const PizzaBase('Pizza Margherita');
+    // here it take default behavior like price and description then and add or edit another behaviors (wrapping)
     pizza = Sauce(pizza);
+    // Sauce will wrap default pizza
     pizza = Mozzarella(pizza);
+    // Mozzarella will wrap sauce default pizza and so on ....
     pizza = Basil(pizza);
     pizza = Oregano(pizza);
     pizza = Pecorino(pizza);
@@ -49,6 +52,7 @@ class PizzaMenu {
   Pizza _getCustom(Map<int, PizzaToppingData> pizzaToppingsDataMap) {
     Pizza pizza = const PizzaBase('Custom Pizza');
 
+    // here if PizzaToppingData is selected it will wrap default pizza and following selected PizzaTopping
     if (pizzaToppingsDataMap[1]!.selected) pizza = Basil(pizza);
     if (pizzaToppingsDataMap[2]!.selected) pizza = Mozzarella(pizza);
     if (pizzaToppingsDataMap[3]!.selected) pizza = OliveOil(pizza);

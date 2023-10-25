@@ -1,9 +1,10 @@
 import 'pizza.dart';
 
 class PizzaBase implements Pizza {
-  const PizzaBase(this.description);
-
+  // default data for Pizza
   final String description;
+
+  const PizzaBase(this.description);
 
   @override
   String getDescription() => description;

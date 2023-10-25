@@ -1,4 +1,5 @@
 class PizzaToppingData {
+  // name of toppings using for custom pizza beside default pizza
   PizzaToppingData(this.label);
 
   final String label;
