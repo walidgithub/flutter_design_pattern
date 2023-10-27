@@ -7,6 +7,7 @@ class ParcelTerminalShippingStrategy implements IShippingCostsStrategy {
   @override
   String label = 'Parcel terminal shipping';
 
+  // fold mean you will loop for (items) and start with 0.0 then update this value by sum old and new value
   @override
   double calculate(Order order) => order.items.fold<double>(
         0.0,

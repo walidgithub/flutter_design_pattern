@@ -13,6 +13,8 @@ class OrderItem {
   final double price;
   final PackageSize packageSize;
 
+  // named constructor that return random values from PackageSize
+  // factory mean you can return data
   factory OrderItem.random() {
     const packageSizeList = PackageSize.values;
 

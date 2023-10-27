@@ -26,6 +26,7 @@ class ShippingOptions extends StatelessWidget {
               'Select shipping type:',
               style: Theme.of(context).textTheme.titleMedium,
             ),
+            // using for loop inside UI
             for (final (i, option) in shippingOptions.indexed)
               RadioListTile<int>(
                 title: Text(option.label),

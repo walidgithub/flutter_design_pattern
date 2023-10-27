@@ -5,6 +5,7 @@ import '../../../../../design_patterns/strategy/strategy.dart';
 import 'order_summary_row.dart';
 
 class OrderSummary extends StatelessWidget {
+  // we will send strategy and Order that has list of orderItems
   final Order order;
   final IShippingCostsStrategy shippingCostsStrategy;
 
@@ -13,7 +14,9 @@ class OrderSummary extends StatelessWidget {
     required this.shippingCostsStrategy,
   });
 
+  // get shipping price after detect strategy and sum with previous value depend on orderItems and sizes using fold function
   double get shippingPrice => shippingCostsStrategy.calculate(order);
+  // get price of every item and sum them using fold function
   double get total => order.price + shippingPrice;
 
   @override
