@@ -12,8 +12,10 @@ class StateExample extends StatefulWidget {
 }
 
 class _StateExampleState extends State<StateExample> {
+  // first state is no result
   final _stateContext = StateContext();
 
+  // calling nextState if loading will get data else other (loaded - ...) they will call loading data again
   Future<void> _changeState() async {
     await _stateContext.nextState();
   }
@@ -42,8 +44,11 @@ class _StateExampleState extends State<StateExample> {
             ),
             const SizedBox(height: LayoutConstants.spaceL),
             StreamBuilder<IState>(
+              // we start with initial data it is no result state
               initialData: const NoResultsState(),
+              // get carried data from inState
               stream: _stateContext.outState,
+              // render the widget from called state
               builder: (context, snapshot) => snapshot.data!.render(),
             ),
           ],

@@ -7,8 +7,11 @@ import 'loading_state.dart';
 class ErrorState implements IState {
   const ErrorState();
 
+  // StateContext is the class that we need to add state or alter state or dispose
   @override
   Future<void> nextState(StateContext context) async {
+    // it is next state if need
+    // calling loading state to try getting data again
     context.setState(const LoadingState());
   }
 
