@@ -12,6 +12,8 @@ class ProxyExample extends StatefulWidget {
 }
 
 class _ProxyExampleState extends State<ProxyExample> {
+  // here we called proxy that will call original class
+  // then run function in proxy class to get customer details from original if not cashed else get cashed data
   final _customerDetailsServiceProxy = CustomerDetailsServiceProxy(
     const CustomerDetailsService(),
   );

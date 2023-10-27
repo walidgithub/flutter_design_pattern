@@ -3,6 +3,7 @@ import 'package:faker/faker.dart';
 import 'customer/customer_details.dart';
 import 'icustomer_details_service.dart';
 
+// this is the original class that return customer details
 class CustomerDetailsService implements ICustomerDetailsService {
   const CustomerDetailsService();
 
