@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'log_level.dart';
 
 class LogMessage {
+  final LogLevel logLevel;
+  final String message;
+
   const LogMessage({
     required this.logLevel,
     required this.message,
   });
-
-  final LogLevel logLevel;
-  final String message;
 
   String get _logLevelString =>
       logLevel.toString().split('.').last.toUpperCase();
