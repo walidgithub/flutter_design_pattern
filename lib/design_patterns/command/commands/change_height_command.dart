@@ -7,7 +7,7 @@ class ChangeHeightCommand implements Command {
   final double previousHeight;
   Shape shape;
 
-  // constructor with initial value that has previous value from Shape constructor
+  // constructor with initial value that has previous value from Shape constructor--
   ChangeHeightCommand(this.shape) : previousHeight = shape.height;
 
   @override

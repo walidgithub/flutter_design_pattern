@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'command.dart';
 
 class CommandHistory {
-  // using list queue like stack in history because we want to remove last action to get last action
+  // using list queue like stack in history because we want to remove last action to get last action--
   final _commandList = ListQueue<Command>();
 
   // check if list is empty

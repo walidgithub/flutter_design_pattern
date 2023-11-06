@@ -8,7 +8,7 @@ class ChangeColorCommand implements Command {
   final Color previousColor;
   Shape shape;
 
-  // constructor with initial value that has previous value from Shape constructor
+  // constructor with initial value that has previous value from Shape constructor--
   ChangeColorCommand(this.shape) : previousColor = shape.color;
 
   @override

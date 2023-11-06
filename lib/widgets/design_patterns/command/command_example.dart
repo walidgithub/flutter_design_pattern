@@ -31,7 +31,7 @@ class _CommandExampleState extends State<CommandExample> {
     _executeCommand(command);
   }
 
-  // here the width is a request and it as an object
+  // here the width is a request and it as an object --
   void _changeWidth() {
     final command = ChangeWidthCommand(_shape);
     _executeCommand(command);

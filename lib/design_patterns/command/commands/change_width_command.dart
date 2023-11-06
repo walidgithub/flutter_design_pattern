@@ -7,7 +7,7 @@ class ChangeWidthCommand implements Command {
   final double previousWidth;
   Shape shape;
 
-  // constructor with initial value that has previous value from Shape constructor
+  // constructor with initial value that has previous value from Shape constructor--
   ChangeWidthCommand(this.shape) : previousWidth = shape.width;
 
   @override

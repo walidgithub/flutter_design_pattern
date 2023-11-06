@@ -5,7 +5,7 @@ class Shape {
   double height;
   double width;
 
-  // named constructor with initial data for shape class
+  // named constructor with initial data for shape class--
   Shape.initial()
       : color = Colors.black,
         height = 150.0,
