@@ -15,28 +15,35 @@ class CommandExample extends StatefulWidget {
 
 class _CommandExampleState extends State<CommandExample> {
   final _commandHistory = CommandHistory();
+  // load initial value for shape
   final _shape = Shape.initial();
 
+  // here the color is a request and it as an object
   void _changeColor() {
+    // execute color change
     final command = ChangeColorCommand(_shape);
     _executeCommand(command);
   }
 
+  // here the height is a request and it as an object
   void _changeHeight() {
     final command = ChangeHeightCommand(_shape);
     _executeCommand(command);
   }
 
+  // here the width is a request and it as an object
   void _changeWidth() {
     final command = ChangeWidthCommand(_shape);
     _executeCommand(command);
   }
 
+  // add command to history and send new value (color or height or width)
   void _executeCommand(Command command) => setState(() {
         command.execute();
         _commandHistory.add(command);
       });
 
+  // undo (remove last action)
   void _undo() => setState(() => _commandHistory.undo());
 
   @override

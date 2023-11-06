@@ -5,6 +5,7 @@ import '../../../design_patterns/command/index.dart';
 class ShapeContainer extends StatelessWidget {
   final Shape shape;
 
+  // we will send new shape properties
   const ShapeContainer({
     required this.shape,
   });

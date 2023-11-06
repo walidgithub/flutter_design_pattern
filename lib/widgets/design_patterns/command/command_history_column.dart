@@ -5,6 +5,7 @@ import '../../../constants/constants.dart';
 class CommandHistoryColumn extends StatelessWidget {
   final List<String> commandList;
 
+  // send list of history to show
   const CommandHistoryColumn({
     required this.commandList,
   });
