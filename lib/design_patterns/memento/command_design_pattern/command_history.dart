@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'icommand.dart';
 
 class CommandHistory {
+  // listQueue let us use addFirst(), addLast(), removeLast() and removeFirst() methods in addition to other list methods like add
   final _commandList = ListQueue<ICommand>();
 
   bool get isEmpty => _commandList.isEmpty;

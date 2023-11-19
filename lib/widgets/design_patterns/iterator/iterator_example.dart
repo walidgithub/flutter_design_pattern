@@ -31,6 +31,7 @@ class _IteratorExampleState extends State<IteratorExample> {
       ..add(DepthFirstTreeCollection(graph));
   }
 
+  // add edge (between nodes) for graph
   Graph _buildGraph() => Graph()
     ..addEdge(1, 2)
     ..addEdge(1, 3)
