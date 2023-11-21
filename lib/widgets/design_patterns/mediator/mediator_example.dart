@@ -14,13 +14,17 @@ class MediatorExample extends StatefulWidget {
 }
 
 class _MediatorExampleState extends State<MediatorExample> {
+  // _notificationHub is the mediator
   late final NotificationHub _notificationHub;
+
+  // pass name to team member his type is Admin and his name is 'God'
   final _admin = Admin(name: 'God');
 
   @override
   void initState() {
     super.initState();
 
+    // add list of team members and their names
     final members = [
       _admin,
       Developer(name: 'Sea Sharp'),
@@ -32,14 +36,18 @@ class _MediatorExampleState extends State<MediatorExample> {
     _notificationHub = TeamNotificationHub(members: members);
   }
 
+  // send message to all members
   void _sendToAll() => setState(() => _admin.send('Hello'));
 
+  // send message to all Qa member
   void _sendToQa() => setState(() => _admin.sendTo<Tester>('BUG!'));
 
+  // send message to all developers members
   void _sendToDevelopers() => setState(
         () => _admin.sendTo<Developer>('Hello, World!'),
       );
 
+  // add random team member with its job position title
   void _addTeamMember() {
     final name = '${faker.person.firstName()} ${faker.person.lastName()}';
     final teamMember = faker.randomGenerator.boolean()
@@ -49,6 +57,8 @@ class _MediatorExampleState extends State<MediatorExample> {
     setState(() => _notificationHub.register(teamMember));
   }
 
+
+  // send message from sender to all members
   void _sendFromMember(TeamMember member) => setState(
         () => member.send('Hello from ${member.name}'),
       );
