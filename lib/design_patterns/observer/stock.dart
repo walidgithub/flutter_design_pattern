@@ -1,6 +1,7 @@
 import 'stock_change_direction.dart';
 import 'stock_ticker_symbol.dart';
 
+// this is a class of data for observables like (google or tesla ...)
 class Stock {
   const Stock({
     required this.symbol,
