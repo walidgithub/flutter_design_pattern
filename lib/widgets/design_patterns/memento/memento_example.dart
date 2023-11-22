@@ -13,10 +13,13 @@ class MementoExample extends StatefulWidget {
 }
 
 class _MementoExampleState extends State<MementoExample> {
+  // use commandHistory to store states
   final _commandHistory = CommandHistory();
+  // originator will deal with care taker (RandomisePropertiesCommand)
   final _originator = Originator();
 
   void _randomiseProperties() {
+    // care taker (RandomisePropertiesCommand) use originator to deal with shape
     final command = RandomisePropertiesCommand(_originator);
     _executeCommand(command);
   }
