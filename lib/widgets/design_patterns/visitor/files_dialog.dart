@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../platform_specific/platform_button.dart';
 
 class FilesDialog extends StatelessWidget {
+  final String filesText;
+
   const FilesDialog({
     required this.filesText,
   });
-
-  final String filesText;
 
   @override
   Widget build(BuildContext context) {

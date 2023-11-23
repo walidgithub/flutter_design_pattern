@@ -4,6 +4,9 @@ import '../file.dart';
 import '../ivisitor.dart';
 
 class TextFile extends File {
+  final String content;
+
+  // initial icon description
   const TextFile({
     required this.content,
     required super.title,
@@ -11,8 +14,7 @@ class TextFile extends File {
     required super.size,
   }) : super(icon: Icons.description);
 
-  final String content;
-
+  // call tne new behavior from visitor (human_readable or xml visitors)
   @override
   String accept(IVisitor visitor) => visitor.visitTextFile(this);
 }

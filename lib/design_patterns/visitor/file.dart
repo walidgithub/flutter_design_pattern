@@ -17,9 +17,11 @@ abstract class File extends StatelessWidget implements IFile {
     required this.icon,
   });
 
+  // return file size
   @override
   int getSize() => size;
 
+  // file UI
   @override
   Widget render(BuildContext context) {
     return Padding(

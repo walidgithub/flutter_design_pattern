@@ -10,7 +10,10 @@ class Directory extends StatelessWidget implements IFile {
   final int level;
   final bool isInitiallyExpanded;
 
+  // directory has list of IFile
   final List<IFile> _files = [];
+
+  // return list of IFile
   List<IFile> get files => _files;
 
   Directory({
@@ -19,19 +22,20 @@ class Directory extends StatelessWidget implements IFile {
     this.isInitiallyExpanded = false,
   });
 
+  // add IFile to list
   void addFile(IFile file) => _files.add(file);
 
+  // return all directory size
   @override
   int getSize() {
     var sum = 0;
-
     for (final file in _files) {
       sum += file.getSize();
     }
-
     return sum;
   }
 
+  // directory UI
   @override
   Widget render(BuildContext context) {
     return Theme(
@@ -53,6 +57,7 @@ class Directory extends StatelessWidget implements IFile {
   @override
   Widget build(BuildContext context) => render(context);
 
+  // call tne new behavior from visitor (human_readable or xml visitors)
   @override
   String accept(IVisitor visitor) => visitor.visitDirectory(this);
 }

@@ -3,12 +3,14 @@ import '../directory.dart';
 import '../files/index.dart';
 import '../ivisitor.dart';
 
+// type of visitors
 class XmlVisitor implements IVisitor {
   const XmlVisitor();
 
   @override
   String getTitle() => 'Export as XML';
 
+  // visit audio (AudioFile class) to execute behavior
   @override
   String visitAudioFile(AudioFile file) {
     final fileInfo = <String, String>{
@@ -21,6 +23,7 @@ class XmlVisitor implements IVisitor {
     return _formatFile('audio', fileInfo);
   }
 
+  // visit audio (Directory class) to execute behavior
   @override
   String visitDirectory(Directory directory) {
     final isRootDirectory = directory.level == 0;
@@ -37,6 +40,7 @@ class XmlVisitor implements IVisitor {
     return buffer.toString();
   }
 
+  // visit audio (ImageFile class) to execute behavior
   @override
   String visitImageFile(ImageFile file) {
     final fileInfo = <String, String>{
@@ -49,6 +53,7 @@ class XmlVisitor implements IVisitor {
     return _formatFile('image', fileInfo);
   }
 
+  // visit audio (TextFile class) to execute behavior
   @override
   String visitTextFile(TextFile file) {
     final fileContentPreview = file.content.length > 30
@@ -65,6 +70,7 @@ class XmlVisitor implements IVisitor {
     return _formatFile('text', fileInfo);
   }
 
+  // visit audio (VideoFile class) to execute behavior
   @override
   String visitVideoFile(VideoFile file) {
     final fileInfo = <String, String>{

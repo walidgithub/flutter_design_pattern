@@ -26,6 +26,7 @@ class _VisitorExampleState extends State<VisitorExample> {
     _rootDirectory = _buildMediaDirectory();
   }
 
+  // return directory or file
   IFile _buildMediaDirectory() {
     final musicDirectory = Directory(title: 'Music', level: 1)
       ..addFile(
@@ -145,7 +146,9 @@ class _VisitorExampleState extends State<VisitorExample> {
   }
 
   void _showFilesDialog() {
+    // select visitor
     final selectedVisitor = visitorsList[_selectedVisitorIndex];
+    // send visitor as a parameter
     final filesText = _rootDirectory.accept(selectedVisitor);
 
     showDialog<void>(

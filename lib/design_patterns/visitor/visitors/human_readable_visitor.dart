@@ -3,12 +3,14 @@ import '../directory.dart';
 import '../files/index.dart';
 import '../ivisitor.dart';
 
+// type of visitors
 class HumanReadableVisitor implements IVisitor {
   const HumanReadableVisitor();
 
   @override
   String getTitle() => 'Export as text';
 
+  // visit audio (AudioFile class) to execute behavior
   @override
   String visitAudioFile(AudioFile file) {
     final fileInfo = <String, String>{
@@ -21,6 +23,7 @@ class HumanReadableVisitor implements IVisitor {
     return _formatFile(file.title, fileInfo);
   }
 
+  // visit audio (Directory class) to execute behavior
   @override
   String visitDirectory(Directory directory) {
     final buffer = StringBuffer();
@@ -32,6 +35,7 @@ class HumanReadableVisitor implements IVisitor {
     return buffer.toString();
   }
 
+  // visit audio (ImageFile class) to execute behavior
   @override
   String visitImageFile(ImageFile file) {
     final fileInfo = <String, String>{
@@ -44,6 +48,7 @@ class HumanReadableVisitor implements IVisitor {
     return _formatFile(file.title, fileInfo);
   }
 
+  // visit audio (TextFile class) to execute behavior
   @override
   String visitTextFile(TextFile file) {
     final fileContentPreview = file.content.length > 30
@@ -60,6 +65,7 @@ class HumanReadableVisitor implements IVisitor {
     return _formatFile(file.title, fileInfo);
   }
 
+  // visit audio (VideoFile class) to execute behavior
   @override
   String visitVideoFile(VideoFile file) {
     final fileInfo = <String, String>{
